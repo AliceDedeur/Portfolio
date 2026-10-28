@@ -1,0 +1,318 @@
+@font-face {
+  font-family: 'Boldonse';
+  src: url('../assets/fonts/Boldonse-Regular.woff2') format('woff2'),
+       url('../assets/fonts/Boldonse-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Antic Didone';
+  src: url('../assets/fonts/AnticDidone-Regular.woff2') format('woff2'),
+       url('../assets/fonts/AnticDidone-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pompiere';
+  src: url('../assets/fonts/Pompiere-Regular.woff2') format('woff2'),
+       url('../assets/fonts/Pompiere-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Truculenta';
+  src: url('../assets/fonts/Truculenta-Variable.woff2') format('woff2'),
+       url('../assets/fonts/Truculenta-Variable.ttf') format('truetype');
+  font-weight: 100 900;   /* plage de graisses de la police variable */
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --boldonse: 'Boldonse', sans-serif;
+  --antic-didone: 'Antic Didone', serif;
+  --truculenta: 'Truculenta', sans-serif;
+  --pompiere: 'Pompiere', sans-serif;
+}
+
+:root {
+  --rouge: #be3c46ff;
+  --bleu: #4e8b86ff;
+  --dore: #e3ab4eff;
+  --bg: #f9edddff;
+  --color-text: #072d40ff;
+  --bg-fonce: #f5debcff;
+
+  --vert: #b7c049ff;
+  --violet: #b56879ff;
+
+  --arrondi: 12px;
+  --ombre: 0 4px 14px rgba(59, 42, 32, 0.12);
+  --h-frise: clamp(80px, 12vh, 120px);
+  --marge: clamp(80px, 16vw, 250px);
+  --pad-dates: 20px;
+  --position-frise: 70vh;
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+} 
+
+body{
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg);
+}
+
+a{
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+/* NAVIGATION */
+
+.nav a{
+  position: fixed;
+  z-index: 100;
+  color: var(--bleu);
+  font-family: var(--pompiere);
+  font-size: 1.4rem;
+  transition: color 0.3s ease;
+}
+
+.haut-gauche{ 
+  top: 40px;    
+  left: 40px; 
+}
+.haut-droit{ 
+  top: 40px;    right: 40px; 
+}
+.bas-gauche{ 
+  bottom: 40px; left: 40px;
+}
+.bas-droit{ 
+  bottom: 40px; right: 40px; 
+}
+
+/* LOGO */
+
+.logo-container {
+  position: absolute;
+  width: 100%;
+  top: 30vh;
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  width: clamp(250px, 40vw, 450px);
+  height: auto;
+  fill: var(--bleu);
+}
+
+.logo .design{ 
+  font-family: var(--boldonse); 
+  font-size: 11.4029px; 
+}
+.logo .web{ 
+  font-family: var(--antic-didone);  
+  font-size: 27.1515px; 
+}
+.logo .dev{ 
+  font-family: var(--antic-didone);  
+  font-size: 16.2811px;
+}
+.logo .nom{
+   font-family: var(--boldonse); 
+   font-size: 51.1054px; 
+}
+
+/* NAVIGATION CONTENEUR */
+
+.cadre {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+}
+
+.conteneur {
+  width: calc(var(--nb-sections) * 100vw);
+  display: flex;
+  flex-direction: row;
+  flex-shrink : 0;
+  transform: translateX(calc(var(--index) * -100vw));
+  transition: transform 1s cubic-bezier(0.51, 0.04, 0.51, 0.99);
+}
+
+/* NAVIGATION FRISE */
+
+.sections {
+  width: 100vw;
+  height: 100vh;
+}
+
+.frise-container {
+  position: relative;
+  width: 100%;
+  height: 100%; 
+}
+
+.frise {
+  position: absolute;
+  top: var(--position-frise);
+  height: var(--h-frise);
+  background-color: var(--bleu);  
+  --colonnes: repeat(4, 1fr);
+} 
+
+.frise-accueil {
+  right: 0;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
+.frise-debut-fin {
+  width: 10vw;
+  display: flex;
+  align-items: center;
+  padding: var(--pad-dates);
+}
+
+.frise-contact {
+  left: 0;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.frise-parcours {
+  padding-left: var(--marge);
+}
+
+.frise-sections {
+  left: 0;
+  width: 100vw;  
+}
+
+#architecture .frise {
+  --colonnes: minmax(0, 2fr) minmax(0, 1.3fr) minmax(0, 2fr) minmax(0, 2fr);
+}
+
+#musique .frise {
+  --colonnes: minmax(0, 2fr) minmax(0, 1.3fr) minmax(0, 2fr);
+}
+
+.frise-domaines {
+  padding-left: var(--pad-dates);
+}
+
+/* FRISE ELEMENTS */
+
+.liens-dates,
+.dates {
+  grid-template-columns: var(--colonnes);
+}
+
+.liens-dates {
+  position: absolute;
+  bottom: var(--h-frise); 
+  right: 0px;
+  display: grid;
+  align-items: end;
+  justify-items: start; 
+}
+
+.liens-dates-parcours {
+  left: var(--marge);
+}
+
+.liens-dates-sections {
+  left: var(--pad-dates);
+}
+
+.box-liens {
+  border-left: 2px solid var(--bleu);
+  border-top: 2px solid var(--bleu);
+  height: var(--hauteur, 20vh);
+  grid-column-start: var(--col-depart, auto);  
+}
+
+/* .box-liens-second {
+  grid-column-start: 2;
+} */
+
+.dates{
+  height: var(--h-frise);
+  width: 100%;
+  display: grid;
+}
+
+.dates li{
+  display: flex;
+  align-items: center;
+  border-left: 2px solid var(--bg);    
+}
+
+.dates span{
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  color: var(--dore);
+  font-family: var(--pompiere);
+  font-size: calc(var(--h-frise) * 0.50);
+}
+
+.arrows {
+  position: absolute;
+  top: calc(var(--position-frise) + var(--h-frise));
+  bottom: 0;
+  width: 100%;
+}
+
+.arrow1 {
+  position: absolute;
+  left: var(--pad-dates);
+}
+.arrow2 {
+  position: absolute;
+  right: var(--pad-dates);
+}
+
+.arrows p {
+  position: absolute;
+  bottom: 0;
+  color: rgb(220, 200, 169);
+}
+
+#architecture {
+  position: relative;
+  z-index: 1;
+}
+
+#architecture::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background-image: url(../assets/img/archim-IA.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.7; 
+}
+
+.modal {
+  --grid-modal: 1fr 2fr;
+}
