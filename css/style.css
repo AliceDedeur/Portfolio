@@ -44,7 +44,7 @@
 :root {
   --rouge: #be3c46ff;
   --bleu: #4e8b86ff;
-  --dore: #e3ab4eff;
+  --dore: #ced68dff;
   --bg: #f9edddff;
   --color-text: #072d40ff;
   --bg-fonce: #f5debcff;
@@ -70,10 +70,57 @@ body{
   width: 100%;
   height: 100%;
   background-color: var(--bg);
+  background-image: url(../assets/img/texture-bg+.png);
+}
+
+body.mode-sombre {
+  background-color: var(--bleu);
+  background-image: url(../assets/img/texture-bg+.png);
+}
+
+body.mode-sombre .logo{
+  fill: rgba(245, 222, 188, 0.2);
+}
+
+body.mode-sombre .arrow1,
+body.mode-sombre .arrow2,
+body.mode-sombre .liens-frise,
+body.mode-sombre .liens-frise,
+body.mode-sombre .nav a,
+body.mode-sombre .box-liens{
+  color: var(--violet);
+  background-color: var(--vert);
+}
+
+body.mode-sombre #architecture,
+body.mode-sombre #musique,
+body.mode-sombre #infographie,
+body.mode-sombre #dev {
+  background-image: none;
+}
+
+body.mode-sombre .frise{
+  box-shadow: inset 0px 10px 8px -6px rgba(230, 235, 197, 0.5), 0px 0px 10px 4px rgba(181, 104, 121, 0.3);
+  /* border-bottom: 2px solid rgba(181, 104, 121, 0.5); */
+}
+
+.mode-sombre{
+  width: 25vw;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 a{
   text-decoration: none;
+}
+
+a:hover {
+  color: var(--violet);
+}
+
+.nav a:hover {
+  color: var(--violet);
 }
 
 ul li {
@@ -124,6 +171,7 @@ h1, h2, p{
   width: clamp(250px, 40vw, 450px);
   height: auto;
   fill: var(--bleu);
+  transition: fill 0.5s ease;
 }
 
 .logo .design{ 
@@ -141,6 +189,10 @@ h1, h2, p{
 .logo .nom{
    font-family: var(--boldonse); 
    font-size: 51.1054px; 
+}
+
+.logo:hover {
+  fill: var(--violet);
 }
 
 /* NAVIGATION CONTENEUR */
@@ -176,10 +228,12 @@ h1, h2, p{
 
 .frise {
   position: absolute;
+  z-index: 1;
   top: var(--position-frise);
   height: var(--h-frise);
   background-color: var(--bleu);  
   --colonnes: repeat(4, 1fr);
+  box-shadow: 2px 4px 7px rgba(128, 128, 128, 0.8), inset 0px 10px 8px -6px rgba(230, 235, 197, 0.5);
 } 
 
 .frise-accueil {
@@ -203,6 +257,7 @@ h1, h2, p{
 
 .frise-parcours {
   padding-left: var(--marge);
+  left: 0;
 }
 
 .frise-sections {
@@ -210,12 +265,20 @@ h1, h2, p{
   width: 100vw;  
 }
 
-#architecture .frise {
-  --colonnes: minmax(0, 2fr) minmax(0, 1.3fr) minmax(0, 2fr) minmax(0, 2fr);
-}
+/* #architecture .frise {
+  --colonnes: minmax(0, 2fr) minmax(0, 2fr) minmax(0, 2fr) minmax(0, 2fr);
+} */
 
 #musique .frise {
-  --colonnes: minmax(0, 2fr) minmax(0, 1.3fr) minmax(0, 2fr);
+  --colonnes: minmax(0, 1.5fr) minmax(0, 2fr) minmax(0, 1.3fr);
+}
+
+#infographie .frise {
+  --colonnes: minmax(0, 3fr) minmax(0, 2fr) minmax(0, 2fr);
+}
+
+#dev .frise {
+  --colonnes: minmax(0, 1fr) minmax(0, 0.5fr) minmax(0, 0.5fr) minmax(0, 0.5fr) minmax(0, 0.5fr) minmax(0, 0.5fr);
 }
 
 .frise-domaines {
@@ -247,15 +310,38 @@ h1, h2, p{
 }
 
 .box-liens {
+  position: relative;
   border-left: 2px solid var(--bleu);
   border-top: 2px solid var(--bleu);
   height: var(--hauteur, 20vh);
   grid-column-start: var(--col-depart, auto);  
 }
 
-/* .box-liens-second {
-  grid-column-start: 2;
+.liens-frise {
+  position: relative;
+  top: -1.3em;
+  font-family: var(--truculenta);
+  color: var(--bleu);
+  font-size: 1.5em;
+}
+
+/* .pastille {
+  position: absolute;
+  bottom: 45vh;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--violet);
+  offset-path: path("M 0 0 C -60 100, 60 180, 0 350");
+  animation: parcours 3.5s linear infinite;
+}
+
+@keyframes parcours {
+  from { offset-distance: 100%; }
+  to   { offset-distance: 0%; }
 } */
+
+/* SUB ELEMENTS FRISE*/
 
 .dates{
   height: var(--h-frise);
@@ -264,6 +350,7 @@ h1, h2, p{
 }
 
 .dates li{
+  height: 100%;
   display: flex;
   align-items: center;
   border-left: 2px solid var(--bg);    
@@ -275,6 +362,14 @@ h1, h2, p{
   color: var(--dore);
   font-family: var(--pompiere);
   font-size: calc(var(--h-frise) * 0.50);
+  cursor: pointer;
+}
+
+.dates .dates-texte {
+  font-family: var(--boldonse);
+  font-size: 0.8em;
+  color: var(--bg-fonce);
+  align-self:self-end;
 }
 
 .arrows {
@@ -287,10 +382,14 @@ h1, h2, p{
 .arrow1 {
   position: absolute;
   left: var(--pad-dates);
+  color: var(--bleu);
+  font-size: 2em;
 }
 .arrow2 {
   position: absolute;
   right: var(--pad-dates);
+  color: var(--bleu);
+  font-size: 2em;
 }
 
 .arrows p {
@@ -299,24 +398,33 @@ h1, h2, p{
   color: rgb(220, 200, 169);
 }
 
-#architecture {
-  position: relative;
-  z-index: 1;
-}
+/* DOMAINES BACKGROUND */
 
-#architecture::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  background-image: url(../assets/img/archim-IA.jpg);
+#architecture {
+  background-image: url(../assets/img/archi-img.png);
   background-repeat: no-repeat;
   background-size: contain;
-  opacity: 0.7; 
 }
+
+#musique {
+  background-image: url(../assets/img/musique-img.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#infographie {
+  background-image: url(../assets/img/infographie-img.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#dev {
+  background-image: url(../assets/img/dev-img.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* PETITEDS MODALES */
 
 .modal-petite[open] {
   position: relative;
@@ -326,7 +434,7 @@ h1, h2, p{
   height: 80vh;
   margin: auto;
   border: none;
-  background-color: var(--bg-fonce);
+  background-color: var(--bg);
   padding: var(--pad-dates);
   color: var(--violet);
   box-shadow: 2px 2px 8px gray;
@@ -351,10 +459,10 @@ h1, h2, p{
 }
 
 .img1 {
-  transform: translateX(20px);
+  transform: translateX(30px);
 }
 .img2 {
-  transform: translateX(20px) translateY(30px);
+  transform: translateX(30px) translateY(30px);
 }
 .img4 {
   transform: translateY(30px);
@@ -379,3 +487,4 @@ h1, h2, p{
   backdrop-filter: blur(1px);
   background-color: transparent;
 }
+

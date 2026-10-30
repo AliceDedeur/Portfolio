@@ -1,3 +1,4 @@
+// NAVIGATION
 const conteneur = document.querySelector('.conteneur');
 const sections = document.querySelectorAll('.sections');
 const liens = document.querySelectorAll('a[data-value]');
@@ -15,7 +16,7 @@ for(let lien of liens){
     });
 }
 
-
+// MODALES
 
 
 const ouvrir = document.querySelectorAll('[data-modale]');
@@ -37,4 +38,10 @@ for(let ferme of fermer){
     });
 }
 
+// MODE_SOMBRE
 
+const sombre = document.querySelector('.mode-sombre');
+
+sombre.addEventListener('click', () => {
+    document.body.classList.toggle('mode-sombre');
+});

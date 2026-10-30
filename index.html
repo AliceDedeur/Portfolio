@@ -18,17 +18,22 @@
             <section class="sections" id="accueil">
                 <div class="frise-container">
                     <div class="logo-container">
-                        <svg class="logo" viewBox="0 0 155.054 83.787" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logo-title">
-                            <title id="logo-title">Al ce - Design Web Développeuse</title>
-                            <g transform="translate(-29.311,-86.519)">
-                                <text class="design" x="-148.261" y="94.577" transform="rotate(-90)">Design</text>
-                                <text class="web" x="29.257" y="170.197">Web</text>
-                                <text class="dev" x="81.182" y="98.730">Développeuse</text>
-                                <text class="nom" x="28.8" y="148.103">Al ce</text>
-                            </g>
-                        </svg>  
+                        <button class="mode-sombre">
+                            <svg class="logo" viewBox="0 0 155.054 83.787" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logo-title">
+                                <title id="logo-title">Al ce - Design Web Développeuse</title>
+                                <g transform="translate(-29.311,-86.519)">
+                                    <text class="design" x="-148.261" y="94.577" transform="rotate(-90)">Design</text>
+                                    <text class="web" x="29.257" y="170.197">Web</text>
+                                    <text class="dev" x="81.182" y="98.730">Développeuse</text>
+                                    <text class="nom" x="28.8" y="148.103">Al ce</text>
+                                </g>
+                            </svg>
+                        </button>  
                     </div>
-                    <div class="frise frise-debut-fin frise-accueil"><a href="#" data-value="1" class="liens">&rarr;</a></div>
+                    <div class="frise frise-debut-fin frise-accueil"></div>
+                    <div class="arrows">
+                        <a href="#" data-value="1" class="liens arrow2">&rarr;</a>
+                    </div>
                 </div>   
             </section>
         
@@ -37,25 +42,25 @@
                     <div class="frise frise-sections frise-parcours">
                         <div class="liens-dates liens-dates-parcours">
                             <div class="box-liens" style="--hauteur: 30vh;">
-                                <a href="#" data-value="2" class="liens">Architecture</a>
+                                <a href="#" data-value="2" class="liens liens-frise">Architecture</a>
                             </div>
                             <div class="box-liens" style="--hauteur: 40vh;">
-                                <a href="#" data-value="3" class="liens">Musique</a>
+                                <a href="#" data-value="3" class="liens liens-frise">Musique</a>
                             </div>
                             <div class="box-liens" style="--hauteur: 20vh;">
-                                <a href="#" data-value="4" class="liens">Infographie</a> 
+                                <a href="#" data-value="4" class="liens liens-frise">Infographie</a> 
                             </div>
                             <div class="box-liens" style="--hauteur: 50vh;">
-                                <a href="#" data-value="5" class="liens">Web Dev</a>
+                                <a href="#" data-value="5" class="liens liens-frise">Web Dev</a>
+                                <div class="pastille"></div>
                             </div>                              
                         </div>
                         <ul class="dates">
-                            <li><span>2000</span></li>
-                            <li><span>2006</span></li>
-                            <li><span>2016</span></li>
-                            <li><span>2026</span></li>
+                            <li><span>2000</span><p class="dates-texte">La Cambre</p></li>
+                            <li><span>2006</span><p class="dates-texte">Studio HumanX</p></li>
+                            <li><span>2016</span><p class="dates-texte">Institut Paul Hankar</p></li>
+                            <li><span>2026</span><p class="dates-texte">Interface3</p></li>
                         </ul>
-                        
                     </div>
                     <div class="arrows">
                         <a href="#" data-value="0" class="liens arrow1">&larr;</a>
@@ -69,26 +74,25 @@
                     <div class="frise frise-sections frise-domaines">
                         <div class="liens-dates liens-dates-sections">
                             <div class="box-liens" style="--hauteur: 50vh; --col-depart: 2;">
-                                <a href="#" data-modale="modal-mali">Coopération et développement</a>
+                                <a href="#" data-modale="modal-mali" class="liens-frise">Coopération et développement</a>
                             </div>
                             <div class="box-liens" style="--hauteur: 30vh;">
-                                <a href="#">Construction en terre crue</a> 
+                                <a href="#" data-modale="modal-carola" class="liens-frise">Construction en terre crue</a> 
                             </div>
                             <div class="box-liens" style="--hauteur: 40vh;">
-                                <a href="#">Contrat de quartier Tanneurs</a>
+                                <a href="#" data-modale="modal-tanneurs" class="liens-frise">Contrat de quartier Tanneurs</a>
                             </div>                              
                         </div>
                         <ul class="dates">
-                            <li><span>2000</span>La Cambre - Architecture</li>
-                            <li><span>2004</span>Mali</li>
-                            <li><span>2005</span>Fabrizio Carola</li>
-                            <li><span>2006</span>Atelier 55</li>
+                            <li><span>2000</span><p class="dates-texte">La Cambre - Architecture</p></li>
+                            <li><span>2004</span><p class="dates-texte">Mali</p></li>
+                            <li><span>2005</span><p class="dates-texte">Fabrizio Carola</p></li>
+                            <li><span>2006</span><p class="dates-texte">Atelier 55</p></li>
                         </ul>  
                     </div>
                     <div class="arrows">
                         <a href="#" data-value="1" class="liens arrow1">&larr;</a>
                         <a href="#" data-value="3" class="liens arrow2">&rarr;</a>
-                        <p>Illustration de fond : Archkhanah (générée par IA)</p>
                     </div> 
                 </div>
             </section>
@@ -98,16 +102,16 @@
                     <div class="frise frise-sections frise-domaines">
                         <div class="liens-dates liens-dates-sections">
                             <div class="box-liens" style="--hauteur: 50vh; --col-depart: 2;">
-                                <a href="#">Répertoire engagé de chansons françaises</a>
+                                <a href="#" class="liens-frise">Répertoire de chansons françaises</a>
                             </div>
                             <div class="box-liens" style="--hauteur: 30vh;">
-                                <a href="#">Assistante ingénieur son</a> 
+                                <a href="#" class="liens-frise">Assistante ingénieur son</a> 
                             </div>                             
                         </div>
                         <ul class="dates">
-                            <li><span>2006</span>Apprentissage guitare</li>
-                            <li><span>2008</span>Interprète Chant/Guitare</li>
-                            <li><span>2010</span>Human X Production - MAO</li>
+                            <li><span>2006</span><p class="dates-texte">Apprentissage guitare</p></li>
+                            <li><span>2008</span><p class="dates-texte">Interprète Chant/Guitare</p></li>
+                            <li><span>2010</span><p class="dates-texte">Human X Production - MAO</p></li>
                         </ul>  
                     </div>
                     <div class="arrows">
@@ -119,12 +123,21 @@
         
             <section class="sections" id="infographie">
                 <div class="frise-container">
-                    <div class="frise frise-sections">
-                        <div class="dates">
-
+                    <div class="frise frise-sections frise-domaines">
+                        <div class="liens-dates liens-dates-sections">
+                            <div class="box-liens" style="--hauteur: 50vh; --col-depart: 2;">
+                                <a href="#" data-modale="modal-adobe" class="liens-frise">Projets</a>
+                            </div>
+                            <div class="box-liens" style="--hauteur: 30vh;">
+                                <a href="#" data-modale="modal-blender" class="liens-frise">Projets</a> 
+                            </div>                             
                         </div>
-                        
-                    </div>
+                        <ul class="dates">
+                            <li><span>2006</span><p class="dates-texte">Bachelier infographie - Institut Paul Hankar</p></li>
+                            <li><span>2008</span><p class="dates-texte">Suite Adobe</p></li>
+                            <li><span>2010</span><p class="dates-texte">Blender 3D</p></li>
+                        </ul> 
+                    </div> 
                     <div class="arrows">
                         <a href="#" data-value="3" class="liens arrow1">&larr;</a>
                         <a href="#" data-value="5" class="liens arrow2">&rarr;</a>
@@ -132,12 +145,34 @@
                 </div>
             </section>
         
-            <section class="sections" id="web-dev">
+            <section class="sections" id="dev">
                 <div class="frise-container">
-                    <div class="frise frise-sections">
-                        <div class="dates">
-
+                    <div class="frise frise-sections frise-domaines">
+                        <div class="liens-dates liens-dates-sections">
+                            <div class="box-liens" style="--hauteur: 50vh; --col-depart: 2;">
+                                <a href="#" class="liens-frise">ToDoList</a>
+                            </div>
+                            <div class="box-liens" style="--hauteur: 30vh;">
+                                <a href="#" class="liens-frise">Oracle Yi King</a> 
+                            </div>
+                            <div class="box-liens" style="--hauteur: 40vh;">
+                                <a href="#" class="liens-frise">Laine Made in Belgium</a>
+                            </div> 
+                            <div class="box-liens" style="--hauteur: 40vh;">
+                                <a href="#" class="liens-frise">Site</a>
+                            </div> 
+                            <div class="box-liens" style="--hauteur: 40vh;">
+                                <a href="#" class="liens-frise">Jeu</a>
+                            </div>                              
                         </div>
+                        <ul class="dates">
+                            <li><span>2026</span><p class="dates-texte">Interface3 - Web Application Developper</p></li>
+                            <li><span>0001</span><p class="dates-texte">Javascript</p></li>
+                            <li><span>0002</span><p class="dates-texte">Python</p></li>
+                            <li><span>0003</span><p class="dates-texte">PHP</p></li>
+                            <li><span>0004</span><p class="dates-texte">Python</p></li>
+                            <li><span>0005</span><p class="dates-texte">PHP</p></li>
+                        </ul>  
                     </div>
                     <div class="arrows">
                         <a href="#" data-value="4" class="liens arrow1">&larr;</a>
@@ -166,6 +201,22 @@
                         <img src="assets/img/mali1.png" alt="Village malien au bord du Niger" class="img2">
                         <img src="assets/img/mali1.png" alt="Village malien au bord du Niger" class="img3">
                         <img src="assets/img/mali1.png" alt="Village malien au bord du Niger" class="img4">
+                    </div>
+                </div>
+                <div class="grid-modal-droite">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae minus autem expedita amet, harum accusantium laboriosam excepturi ut eveniet id eum! Ullam placeat ratione velit ex expedita fugit rerum neque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae minus autem expedita amet, harum accusantium laboriosam excepturi ut eveniet id eum! Ullam placeat ratione velit ex expedita fugit rerum neque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae minus autem expedita amet, harum accusantium laboriosam excepturi ut eveniet id eum! Ullam placeat ratione velit ex expedita fugit rerum neque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae minus autem expedita amet, harum accusantium laboriosam excepturi ut eveniet id eum! Ullam placeat ratione velit ex expedita fugit rerum neque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae minus autem expedita amet, harum accusantium laboriosam excepturi ut eveniet id eum! Ullam placeat ratione velit ex expedita fugit rerum neque?</p>
+                </div>
+            <button class="btn-fermer">Fermer</button>
+        </dialog>
+
+        <dialog class="modal modal-petite" id="modal-carola">
+                <div class="grid-modal-gauche">
+                    <h2>Fabrizio Carola - Construction en terre crue</h2>
+                    <div class="images-petite-modal">
+                        <img src="assets/img/carola2.avif" alt="Village malien au bord du Niger" class="img1">
+                        <img src="assets/img/carola5.avif" alt="Village malien au bord du Niger" class="img2">
+                        <img src="assets/img/carola1.jpg" alt="Village malien au bord du Niger" class="img3">
+                        <img src="assets/img/carola-compas.webp" alt="Village malien au bord du Niger" class="img4">
                     </div>
                 </div>
                 <div class="grid-modal-droite">
